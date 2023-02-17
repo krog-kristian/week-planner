@@ -14,17 +14,21 @@ section {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  justify-content: center;
 }
 
 .day {
   border: 0.1rem solid black;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
 }
 
 .space-between {
@@ -75,4 +79,20 @@ textarea {
 
 form {
   width: 90%;
+}
+
+th {
+  background-color: gray;
+}
+
+tr {
+  height: 1rem;
+}
+
+tr:nth-child(even) {
+  background-color: #eee;
+}
+
+table {
+  width: 80%;
 }
