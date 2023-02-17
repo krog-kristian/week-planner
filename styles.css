@@ -32,6 +32,7 @@ section {
 }
 
 .space-between {
+  display: flex;
   justify-content: space-between;
 }
 
@@ -95,4 +96,16 @@ tr:nth-child(even) {
 
 table {
   width: 80%;
+}
+
+.update {
+  border: 0.1rem solid black;
+  border-radius: 0.3rem;
+  background-color: aqua;
+}
+
+.delete {
+  border: 0.1rem solid black;
+  border-radius: 0.3rem;
+  background-color: orangered;
 }
