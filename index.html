@@ -11,24 +11,26 @@
     <header>
       <h1>Weekly Planner</h1>
     </header>
-    <div>
-      <h2> Add Entry</h2>
-      <form action="">
-        <div>
-          <select name="day-of-week" id="day-of-week">
-            <option value="sunday">Sunday</option>
-            <option value="monday">Monday</option>
-            <option value="tuesday">Tuesday</option>
-            <option value="wednesday">Wednesday</option>
-            <option value="thursday">Thursday</option>
-            <option value="friday">Friday</option>
-            <option value="saturday">saturday</option>
-          </select>
-          <select name="time" id="time"></select>
-        </div>
-        <textarea name="description" id="description" rows="10"></textarea>
-        <div><button type="submit">Submit</button></div>
-      </form>
+    <div class="modal">
+      <div class="pop-up">
+        <h2> Add Entry</h2>
+        <form action="">
+          <div>
+            <select name="day-of-week" id="day-of-week">
+              <option value="sunday">Sunday</option>
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">saturday</option>
+            </select>
+            <input type="time" id="time" min="08:00" max="20:00">
+          </div>
+          <textarea name="description" id="description" rows="10"></textarea>
+          <div><button type="submit">Submit</button></div>
+        </form>
+      </div>
     </div>
     <section>
       <div class="row space-between">
