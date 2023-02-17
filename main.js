@@ -5,9 +5,22 @@ var data = {
   view: 'Monday'
 };
 
+window.addEventListener('beforeunload', plannerLocalStorage);
+
+function plannerLocalStorage(event) {
+  var dataJson = JSON.stringify(data);
+  var dataLocalStorage = localStorage.setItem('planner-local-storage', dataJson);
+  return dataLocalStorage;
+}
+
+if (localStorage.getItem('planner-local-storage')) {
+  data = JSON.parse(localStorage.getItem('planner-local-storage'));
+}
+
 var $modal = document.querySelector('.modal');
 var $entryButton = document.querySelector('.add-entry-button');
 var $form = document.querySelector('form');
+var $tbody = document.querySelector('tbody');
 
 $entryButton.addEventListener('click', function () {
   $modal.classList.remove('hidden');
@@ -27,14 +40,10 @@ $form.addEventListener('submit', function () {
   $form.reset();
 });
 
-window.addEventListener('beforeunload', plannerLocalStorage);
-
-function plannerLocalStorage(event) {
-  var dataJson = JSON.stringify(data);
-  var dataLocalStorage = localStorage.setItem('planner-local-storage', dataJson);
-  return dataLocalStorage;
-}
-
-if (localStorage.getItem('planner-local-storage')) {
-  data = JSON.parse(localStorage.getItem('planner-local-storage'));
+function renderData(day) {
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].day === day) {
+      console.log(data.entries[i]);
+    }
+  }
 }
