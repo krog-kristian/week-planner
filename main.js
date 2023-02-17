@@ -43,7 +43,14 @@ $form.addEventListener('submit', function () {
 function renderData(day) {
   for (var i = 0; i < data.entries.length; i++) {
     if (data.entries[i].day === day) {
-      console.log(data.entries[i]);
+      var $tableRow = document.createElement('tr');
+      var $tableDataTime = document.createElement('td');
+      var $tableDataDescription = document.createElement('td');
+      $tableDataTime.textContent = data.entries[i].time;
+      $tableDataDescription.textContent = data.entries[i].description;
+      $tableRow.appendChild($tableDataTime);
+      $tableRow.appendChild($tableDataDescription);
+      $tbody.appendChild($tableRow);
     }
   }
 }
