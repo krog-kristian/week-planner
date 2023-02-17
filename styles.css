@@ -1,4 +1,29 @@
-.container {
+header {
   display: flex;
+  justify-content: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.day {
+  border: 0.1rem solid black;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.button-container {
+  align-items: center;
   justify-content: center;
 }
