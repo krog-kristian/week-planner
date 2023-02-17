@@ -54,3 +54,18 @@ function renderData(day) {
     }
   }
 }
+
+var $daySelector = document.getElementById('day-selector');
+$daySelector.addEventListener('click', function () {
+  if (event.target.matches('.day')) {
+    if (event.target.textContent !== data.view) {
+      var $chosenDay = event.target.textContent.toLowerCase();
+      var $tableRows = document.querySelectorAll('tbody > tr');
+      for (let i = 0; i < $tableRows.length; i++) {
+        $tableRows[i].remove();
+      }
+      renderData($chosenDay);
+      data.view = event.target.textContent;
+    }
+  }
+});
