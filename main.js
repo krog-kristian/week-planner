@@ -61,6 +61,8 @@ $daySelector.addEventListener('click', function () {
     if (event.target.textContent !== data.view) {
       var $chosenDay = event.target.textContent.toLowerCase();
       var $tableRows = document.querySelectorAll('tbody > tr');
+      var $daySchedule = document.querySelector('#day-schedule');
+      $daySchedule.textContent = 'Schedule Events for ' + event.target.textContent;
       for (let i = 0; i < $tableRows.length; i++) {
         $tableRows[i].remove();
       }
