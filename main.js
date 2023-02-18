@@ -40,6 +40,7 @@ $form.addEventListener('submit', function () {
   $form.reset();
 });
 
+// day must be in lowercase
 function renderData(day) {
   for (var i = 0; i < data.entries.length; i++) {
     if (data.entries[i].day === day) {
@@ -84,7 +85,7 @@ function dayload(event) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  data.view = 'Monday';
-  dayload('Monday');
+window.addEventListener('DOMContentLoaded', function () {
+  data.view = 'monday';
+  renderData(data.view);
 });
