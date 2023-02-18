@@ -48,6 +48,17 @@ function renderData(day) {
       var $tableDataDescription = document.createElement('td');
       $tableDataTime.textContent = data.entries[i].time;
       $tableDataDescription.textContent = data.entries[i].description;
+      $tableDataDescription.setAttribute('class', 'space-between');
+      var $updateButton = document.createElement('button');
+      var $deleteButton = document.createElement('button');
+      $updateButton.setAttribute('class', 'update');
+      $deleteButton.setAttribute('class', 'delete');
+      $updateButton.textContent = 'Update';
+      $deleteButton.textContent = 'Delete';
+      var $buttonDiv = document.createElement('div');
+      $buttonDiv.appendChild($updateButton);
+      $buttonDiv.appendChild($deleteButton);
+      $tableDataDescription.appendChild($buttonDiv);
       $tableRow.appendChild($tableDataTime);
       $tableRow.appendChild($tableDataDescription);
       $tbody.appendChild($tableRow);
@@ -56,7 +67,8 @@ function renderData(day) {
 }
 
 var $daySelector = document.getElementById('day-selector');
-$daySelector.addEventListener('click', function () {
+$daySelector.addEventListener('click', dayload);
+function dayload(event) {
   if (event.target.matches('.day')) {
     if (event.target.textContent !== data.view) {
       var $chosenDay = event.target.textContent.toLowerCase();
@@ -70,4 +82,9 @@ $daySelector.addEventListener('click', function () {
       data.view = event.target.textContent;
     }
   }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  data.view = 'Monday';
+  dayload('Monday');
 });
